@@ -122,7 +122,7 @@ sha1sum ~/VirtualBox\ VMs/your_vm/your_vm.vdi
 shasum ~/VirtualBox\ VMs/your_vm/your_vm.vdi
 ```
 
-**For UTM users (Mac M1):
+For UTM users (Mac M1):
 ```bash
 shasum ~/Library/Containers/com.utmapp.UTM/Data/Documents/your_vm.utm/Images/disk-0.qcow2
 
