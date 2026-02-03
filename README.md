@@ -17,7 +17,7 @@ By the end of this project, you will have set up a fully functional, secure serv
 ### Prerequisites
 - VirtualBox (or UTM for Mac M1 users)
 - ISO image of Debian (latest stable) or Rocky Linux (latest stable)
-- Minimum 8GB disk space for the virtual machine/but preferabally 30.80 gb if you are willin to the bonus part [the partions]
+- Minimum 8GB disk space for the virtual machine/but preferabally 30.80 gb if you are willing to do the bonus part [the partions]
 
 ### Installation Steps
 
