@@ -21,17 +21,17 @@ By the end of this project, you will have set up a fully functional, secure serv
 
 ### Installation Steps
 
-1. Create the Virtual Machine**
+1. Create the Virtual Machine
    - Open VirtualBox/UTM
    - Create a new VM with appropriate specifications
    - Attach the Debian/Rocky ISO image
 
-2. Install the Operating System**
+2. Install the Operating System
    - Follow the installation wizard
    - Configure encrypted LVM partitions during installation
    - Set up at least 2 encrypted partitions
 
-3.Initial System Configuration**
+3.Initial System Configuration
    ```bash
    # Update system packages
    sudo apt update && sudo apt upgrade -y  # For Debian
@@ -39,12 +39,12 @@ By the end of this project, you will have set up a fully functional, secure serv
    sudo dnf update -y  # For Rocky
    ```
 
-4. Configure Hostname**
+4. Configure Hostname
    ```bash
    sudo hostnamectl set-hostname your_login42
    ```
 
-5. Install and Configure SSH**
+5. Install and Configure SSH
    ```bash
    sudo apt install openssh-server -y  # For Debian
    sudo systemctl enable ssh
@@ -53,7 +53,7 @@ By the end of this project, you will have set up a fully functional, secure serv
    - Edit `/etc/ssh/sshd_config` to change port to 4242
    - Disable root login via SSH
 
-6. Configure Firewall**
+6. Configure Firewall
    ```bash
    # For Debian (UFW)
    sudo apt install ufw -y
@@ -67,24 +67,24 @@ By the end of this project, you will have set up a fully functional, secure serv
    sudo firewall-cmd --reload
    ```
 
-7. Set Up Password Policy**
+7. Set Up Password Policy
    - Install libpam-pwquality: `sudo apt install libpam-pwquality`
    - Configure `/etc/login.defs` for password aging
    - Configure `/etc/security/pwquality.conf` for password complexity
 
-8. Configure Sudo**
+8. Configure Sudo
    - Edit sudoers configuration: `sudo visudo`
    - Create custom sudo log directory: `sudo mkdir -p /var/log/sudo`
    - Configure sudo settings in `/etc/sudoers.d/sudo_config`
-
-9. Create User and Groups**
+     
+9. Create User and Groups
    ```bash
    sudo adduser your_login
    sudo addgroup user42
    sudo usermod -aG user42,sudo your_login
    ```
 
-10. Set Up Monitoring Script**
+10. Set Up Monitoring Script
     - Create `/usr/local/bin/monitoring.sh`
     - Make it executable: `sudo chmod +x /usr/local/bin/monitoring.sh`
     - Configure cron job: `sudo crontab -e`
@@ -92,16 +92,16 @@ By the end of this project, you will have set up a fully functional, secure serv
 
 ### Running the Project
 
-1.  Start the Virtual Machine**
+1.  Start the Virtual Machine
    - Launch VirtualBox/UTM
    - Start your configured VM
 
-2. Verify Configuration**
+2. Verify Configuration
    - Check SSH service: `sudo systemctl status ssh`
    - Check firewall status: `sudo ufw status` or `sudo firewall-cmd --list-all`
    - Verify monitoring script runs every 10 minutes
 
-3. Connect via SSH**
+3. Connect via SSH
    ```bash
    ssh your_login@localhost -p 4242
    ```
@@ -122,7 +122,7 @@ sha1sum ~/VirtualBox\ VMs/your_vm/your_vm.vdi
 shasum ~/VirtualBox\ VMs/your_vm/your_vm.vdi
 ```
 
-**For UTM users (Mac M1):**
+**For UTM users (Mac M1):
 ```bash
 shasum ~/Library/Containers/com.utmapp.UTM/Data/Documents/your_vm.utm/Images/disk-0.qcow2
 
